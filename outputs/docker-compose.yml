@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  heart-disease-api:
+    build: ..
+    ports:
+      - "5000:5000"
+    environment:
+      - MODEL_PATH=best_heart_disease_model.pkl
+      - SCALER_PATH=feature_scaler.pkl
+    volumes:
+      - ../models:/app/models:ro
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  heart-disease-ui:
+    build: ..
+    ports:
+      - "8080:8080"
+    depends_on:
+      - heart-disease-api
+    environment:
+      - API_URL=http://heart-disease-api:5000
+    restart: unless-stopped

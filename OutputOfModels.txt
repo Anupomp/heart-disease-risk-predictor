@@ -1,0 +1,53 @@
+PS D:\Code\heart-disease-risk-predictor> C:/Python313/python.exe model_pipeline.py
+🚀 Starting Enhanced Heart Disease ML Pipeline...
+============================================================
+Dataset loaded successfully with shape: (920, 16)
+Columns: ['id', 'age', 'sex', 'dataset', 'cp', 'trestbps', 'chol', 'fbs', 'restecg', 'thalch', 'exang', 'oldpeak', 'slope', 'ca', 'thal', 'num']
+Target distribution: No Disease: 411, Disease: 509
+Training set size: 736
+Test set size: 184
+Feature names: ['age', 'sex', 'cp', 'trestbps', 'chol', 'fbs', 'restecg', 'thalch', 'exang', 'oldpeak', 'slope', 'ca', 'thal']
+Training multiple models with hyperparameter tuning...
+
+Training Random Forest...
+Best parameters for Random Forest: {'max_depth': 10, 'min_samples_split': 5, 'n_estimators': 200}
+Best CV score: 0.8754
+
+Training Gradient Boosting...
+Best parameters for Gradient Boosting: {'learning_rate': 0.05, 'max_depth': 3, 'n_estimators': 100}
+Best CV score: 0.8756
+
+Training Logistic Regression...
+Best parameters for Logistic Regression: {'C': 0.1, 'penalty': 'l2', 'solver': 'liblinear'}
+Best CV score: 0.8615
+
+================================================================================
+COMPREHENSIVE MODEL EVALUATION RESULTS
+================================================================================
+
+Random Forest Results:
+Accuracy: 0.8315
+Precision: 0.8318
+Recall: 0.8725
+F1-Score: 0.8517
+ROC-AUC: 0.9191
+CV Score: 0.8754 (±0.0196)
+
+Gradient Boosting Results:
+Accuracy: 0.8261
+Precision: 0.8070
+Recall: 0.9020
+F1-Score: 0.8519
+ROC-AUC: 0.9081
+CV Score: 0.8756 (±0.0203)
+
+Logistic Regression Results:
+Accuracy: 0.8098
+Precision: 0.8190
+Recall: 0.8431
+F1-Score: 0.8309
+ROC-AUC: 0.8900
+CV Score: 0.8615 (±0.0211)
+
+🏆 Best Model: Random Forest (AUC: 0.9191)
+✅ Best model and scaler saved!

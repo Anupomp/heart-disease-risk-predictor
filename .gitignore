@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+# Virtual Environment
+venv/
+env/
+.env
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+# OS
+.DS_Store
+Thumbs.db
+# Data & Models (if large)
+*.pkl
+*.joblib
+*.h5
+*.model
+# Logs
+*.log
+logs/
+# Jupyter Notebook
+.ipynb_checkpoints
+# Database
+*.db
+*.sqlite
+*.sqlite3
+# Outputs (optional - uncomment if files are large)
+# outputs/
+# *.png
+# *.html
